@@ -16,7 +16,12 @@ Access-Token | ``Signal maker's access token``
 
 ## Make new signal
 
-### Request body (test on api test link above)
+#### Request
+Description | Method | Path
+---- | ---- | ----
+Execute new signal | ``POST`` | ``/make``
+
+### Body (test on api test link above)
 ```json
 {
   "client_id": "76cfa72f-275b-4537-970a-c495b20a49c6",
