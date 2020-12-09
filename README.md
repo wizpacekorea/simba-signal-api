@@ -24,14 +24,14 @@ Execute new signal | ``POST`` | ``/make``
 ### Body (test on api test link above)
 ```json
 {
-  "client_id": "76cfa72f-275b-4537-970a-c495b20a49c6",
-  "leaves_qty": "0.75",
-  "price": "12000",
-  "qty": "0.25",
-  "sent_at": 1607402327,
-  "side": "buy",
+  "id": "76cfa72f-275b-4537-970a-c495b20a49c6",
   "symbol": "XBTUSD",
+  "price": "12000",
+  "qty_ratio": "0.25",
+  "remaining_ratio": "0.75",
+  "side": "sell",
   "type": "limit",
+  "timestamp": 1607402327,
   "valid_before": 1607402327
 }
 ```
