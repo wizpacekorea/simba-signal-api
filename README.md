@@ -59,6 +59,7 @@ Execute new signal | ``POST`` | ``/make``
 * Required only when making a limit order. 
 * Provide in string format for accuracy (json can have issues with scientific notion)
 * We'll automatically truncate the decimals based on exchange's symbol precision. E.g if on Bitmex XBTUSD is 2 precision 1500.9954 will be truncated to 1500.99.
+* In string format for accuracy
 
 
 ### qty_ratio
@@ -66,13 +67,15 @@ Execute new signal | ``POST`` | ``/make``
 * The ratio of qty amount you are buying relative to your balance. 
 * Example if you have 1 XBT as balance and are about to open a position of value 0.3 XBT, then qty_ratio = 0.3
 * Always positive regardless it's a sell or buy. 
+* In string format for accuracy
 
 ### remaining_ratio
 * Required all the time
 * The ratio of current position margin to the future position margin if this order gets executed.
-* - for short, + for long
+* "-" for short, + for long
 * Example, you have a short position remaining_ratio = 1. You wish close (long) 25% of the position then remaining_ratio = -0.75 (- because you were in a short).
 * Another example, you have a long position, you wish to close 100% of it, remaining_ratio = 0.
+* In string format for accuracy
 
 ### side
 * Required all the time
