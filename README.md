@@ -72,9 +72,10 @@ Execute new signal | ``POST`` | ``/make``
 ### remaining_ratio
 * Required all the time
 * The ratio of current position margin to the future position margin if this order gets executed.
-* "-" for short, + for long
-* Example, you have a short position remaining_ratio = 1. You wish close (long) 25% of the position then remaining_ratio = -0.75 (- because you were in a short).
-* Another example, you have a long position, you wish to close 100% of it, remaining_ratio = 0.
+* "-" for short, "+" for long
+* - Example, you have a short position remaining_ratio = 1. You wish close (long) 25% of the position then remaining_ratio = -0.75 (- because you were in a short).
+* - Example, you have a long position, you wish to close 100% of it, remaining_ratio = 0.
+* - Example, you have a long position, wish to close 30% of it, remaining_ratio = 0.7
 * In string format for accuracy
 
 ### side
