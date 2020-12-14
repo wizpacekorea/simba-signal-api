@@ -30,7 +30,7 @@ Execute new signal | ``POST`` | ``/make``
   "wallet_balance":"1000.50",
   "wallet_balance_symbol":"USDT",
   "current_position_quantity":"120",
-  "order_quanttity":"100",
+  "order_quantity":"100",
   "side": "sell",
   "type": "limit",
   "timestamp": 1607402327,
@@ -80,7 +80,7 @@ Execute new signal | ``POST`` | ``/make``
 * 0 if nothing means this is the first order to open the position
 * Positive if you have a long position
 
-### order_quanttity
+### order_quantity
 * Required all the time, always + even for sell orders because we have "side" you can put sell there
 * The amount you are making for this particular order. 
 * Example buying or selling 200 contracts of XBTUSD on Bitmex then ``order_quanttity = 200``
