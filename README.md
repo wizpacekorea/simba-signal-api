@@ -135,12 +135,12 @@ Execute a match order | ``POST`` | ``/match``
   "open_positions":[
     {
       "symbol":"XBTUSD",
-      "amount:"2500",
+      "amount":"2500",
       "avg_entry_price":"1950.5"
      },
      {
       "symbol":"ETHUSD",
-      "amount:"300",
+      "amount":"300",
       "avg_entry_price":"450.5"
      }
   ]
