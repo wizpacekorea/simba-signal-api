@@ -106,21 +106,8 @@ Execute new signal | ``POST`` | ``/make``
 * The deadline for executing this order
 * Unix up to seconds only format e.g. 1607402327
 
-## Note
-* We always return http status 200 in all cases including when there's an error on your end. Any other status means the request didn't reach our server. If you don't receive 200 in case our servers are offline, try resending the signal every 5 seconds until the signal reaches the server.
-* Read the status field in the response to see the status code.
-
-## Status
-* 0 = No error
-* 4000 = Server error
-* 4001 = Unauthorized (check your access token)
-* 4002 = Invalid request (make sure you provide all the required parameters)
-* 4004 = Signal duplicate (when you send the signal with same id twice)
-
-
 
 # Match Position
-
 ## Request
 Description | Method | Path
 ---- | ---- | ----
@@ -188,3 +175,17 @@ Execute a match order | ``POST`` | ``/match``
 * Required all the time
 * The average price you opened the position at.
 * Float string for accuracy
+
+
+## Note
+* For match, send the snapshot every 5-10 seconds if you can.  
+* We always return http status 200 in all cases including when there's an error on your end. Any other status means the request didn't reach our server. If you don't receive 200 in case our servers are offline, try resending the signal every 5 seconds until the signal reaches the server.
+* Read the status field in the response to see the status code.
+
+## Status
+* 0 = No error
+* 4000 = Server error
+* 4001 = Unauthorized (check your access token)
+* 4002 = Invalid request (make sure you provide all the required parameters)
+* 4004 = Signal duplicate (when you send the signal with same id twice)
+
