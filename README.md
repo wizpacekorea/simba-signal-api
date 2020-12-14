@@ -27,7 +27,7 @@ Execute new signal | ``POST`` | ``/make``
   "id": "76cfa72f-275b-4537-970a-c495b20a49c6",
   "symbol": "XBTUSD",
   "price": "12000",
-  "wallet_balance":"1000.50"
+  "wallet_balance":"1000.50",
   "wallet_balance_symbol":"USDT",
   "current_position_quantity":"120",
   "order_quanttity":"100",
@@ -116,3 +116,75 @@ Execute new signal | ``POST`` | ``/make``
 * 4001 = Unauthorized (check your access token)
 * 4002 = Invalid request (make sure you provide all the required parameters)
 * 4004 = Signal duplicate (when you send the signal with same id twice)
+
+
+
+# Match Position
+
+## Request
+Description | Method | Path
+---- | ---- | ----
+Execute a match order | ``POST`` | ``/match``
+
+### Body (test on api test link above)
+```json
+{
+  "wallet_balance":"0.5",
+  "wallet_balance_symbol":"XBT",
+  "timestamp":1607402327,
+  "open_positions":[
+    {
+      "symbol":"XBTUSD",
+      "amount:"2500",
+      "avg_entry_price":"1950.5"
+     },
+     {
+      "symbol":"ETHUSD",
+      "amount:"300",
+      "avg_entry_price":"450.5"
+     }
+  ]
+}
+```
+
+## Response
+```json
+{
+  "status":0
+}
+```
+
+### wallet_balance
+* Required all the time
+* Must go with wallet_balance_symbol, if it's spot say BTC/USDT then USDT is the symbol, wallet_balance is the amount of USDT in the account. For future's e.g on Bitmex the balance is XBT. Then use XBT
+* Float string for accuracy
+
+### wallet_balance_symbol
+* Required all the time
+* The balance of the base currency used to trade. In spot e.g ETH/USDT the wallet_balance_symbol is USDT.
+* Make sure it matches the symbol provided in the exchange. 
+
+### timestamp
+* Required all the time
+* The time the signal is sent, if you are resending in case of network errors don't change, use the first timestamp from the first time you wished to send the order.
+* Unix up to seconds only format e.g. 1607402327
+
+### open_positions
+* Required all the time
+* All positions that are currently being held by the user
+* Return an empty array if no position
+
+
+### open_position > symbol
+* Required all the time
+* The symbol, matching the exchange symbol of the position being held.
+
+### open_position > amount
+* Required all the time
+* Positive for long, Negative for short.
+* Float string for accuracy
+
+### open_position > avg_entry_price
+* Required all the time
+* The average price you opened the position at.
+* Float string for accuracy
