@@ -177,8 +177,24 @@ Execute a match order | ``POST`` | ``/match``
 * Float string for accuracy
 
 
-## Note
-* For match, send the snapshot every 5-10 seconds if you can.  
+## Notee
+* For /match, send the snapshot every 5-10 seconds if you can. The quicker we match your position list the more close the data
+* For bots that only issue buy or sell signal. Send only:
+```
+  {
+    "id": "76cfa72f-275b-4537-970a-c495b20a49c6",
+    "symbol": "XBTUSD",
+    "price": "12000",
+    "side": "sell",
+    "type": "limit",
+    "timestamp": 1607402327,
+    "valid_before": 1607402327
+  }
+```
+* - price not required if it's just market order. 
+
+
+## Error handling
 * We always return http status 200 in all cases including when there's an error on your end. Any other status means the request didn't reach our server. If you don't receive 200 in case our servers are offline, try resending the signal every 5 seconds until the signal reaches the server.
 * Read the status field in the response to see the status code.
 
