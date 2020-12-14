@@ -27,8 +27,10 @@ Execute new signal | ``POST`` | ``/make``
   "id": "76cfa72f-275b-4537-970a-c495b20a49c6",
   "symbol": "XBTUSD",
   "price": "12000",
-  "qty_ratio": "0.25",
-  "remaining_ratio": "0.75",
+  "wallet_balance":"1000.50"
+  "wallet_balance_symbol":"USDT",
+  "current_position_quantity":"120",
+  "order_quanttity":"100",
   "side": "sell",
   "type": "limit",
   "timestamp": 1607402327,
@@ -61,22 +63,32 @@ Execute new signal | ``POST`` | ``/make``
 * We'll automatically truncate the decimals based on exchange's symbol precision. E.g if on Bitmex XBTUSD is 2 precision 1500.9954 will be truncated to 1500.99.
 * In string format for accuracy
 
+"wallet_balance":"1000.50"
+"wallet_balance_symbol":"USDT"
+"current_position_quantity":"120",
+"order_quanttity":"130",
 
-### qty_ratio
+### wallet_balance
 * Required all the time
-* The ratio of qty amount you are buying relative to your balance. 
-* Example if you have 1 XBT as balance and are about to open a position of value 0.3 XBT, then qty_ratio = 0.3
-* Always positive regardless it's a sell or buy. 
-* In string format for accuracy
+* Must go with wallet_balance_symbol, if it's spot say BTC/USDT then USDT is the symbol, wallet_balance is the amount of USDT in the account. For future's e.g on Bitmex the balance is XBT. Then use XBT
+* Float string for accuracy
 
-### remaining_ratio
+### wallet_balance_symbol
 * Required all the time
-* The ratio of current position margin to the future position margin if this order gets executed.
-* "-" for short, "+" for long
-* - Example, you have a short position remaining_ratio = 1. You wish close (long) 25% of the position then ``remaining_ratio:-0.75``
-* - Example, you have a long position, you wish to close 100% of it, ``remaining_ratio:0``.
-* - Example, you have a long position, wish to close 30% of it, ``remaining_ratio:0.7``
-* In string format for accuracy
+* The balance of the base currency used to trade. In spot e.g ETH/USDT the wallet_balance_symbol is USDT.
+* Make sure it matches the symbol provided in the exchange. 
+
+### current_position_quantity
+* Required all the time, can be -, 0, + 
+* It's the quantity of the position that's already open. E.g I have a short position open of 500 XBTUSD on Bitmex then ``current_position_quantity = -500``
+* Negative if you have a short position
+* 0 if nothing means this is the first order to open the position
+* Positive if you have a long position
+
+### order_quanttity
+* Required all the time, always + even for sell orders because we have "side" you can put sell there
+* The amount you are making for this particular order. 
+* Example buying or selling 200 contracts of XBTUSD on Bitmex then ``order_quanttity = 200``
 
 ### side
 * Required all the time
