@@ -63,11 +63,6 @@ Execute new signal | ``POST`` | ``/make``
 * We'll automatically truncate the decimals based on exchange's symbol precision. E.g if on Bitmex XBTUSD is 2 precision 1500.9954 will be truncated to 1500.99.
 * In string format for accuracy
 
-"wallet_balance":"1000.50"
-"wallet_balance_symbol":"USDT"
-"current_position_quantity":"120",
-"order_quanttity":"130",
-
 ### wallet_balance
 * Required all the time
 * Must go with wallet_balance_symbol, if it's spot say BTC/USDT then USDT is the symbol, wallet_balance is the amount of USDT in the account. For future's e.g on Bitmex the balance is XBT. Then use XBT
