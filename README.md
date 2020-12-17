@@ -4,7 +4,6 @@ API Version | ``2``
 ---- | ----
 Endpoint | ``https://simba.leagueoftraders.io/v1/signal/<endpoint>``
 Content-Type | ``application/json``
-API Test | https://simba.leagueoftraders.io/docs
 
 # Constants
 
