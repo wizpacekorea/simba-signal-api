@@ -12,6 +12,9 @@ Header | Meaning
 ---- | ----
 Access-Token | ``Signal maker's access token``
 
+## Important
+#### Every algorithm needs it's own different access token. Two different algorithms shouldn't push signals using the same access token because each signal will be executed. 
+
 
 # Make new signal
 
