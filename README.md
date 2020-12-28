@@ -96,6 +96,7 @@ Execute new signal | ``POST`` | ``/make``
 * Required all the time
 * limit
 * market
+* close
 
 ### timestamp
 * Required all the time
