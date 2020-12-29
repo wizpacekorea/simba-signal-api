@@ -180,7 +180,7 @@ Execute a match order | ``POST`` | ``/match``
 * Float string for accuracy
 
 
-## Notee
+## Note
 * For /match, send the snapshot every 5-10 seconds if you can. The quicker we match your position list the more close the data
 * For bots that only issue buy or sell signal. Send only:
 ```
