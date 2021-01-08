@@ -14,14 +14,14 @@ Access-Token | ``Signal maker's access token``
 
 # Contents
 ## Bot Maker
-* [Bot Maker Profile](#Bot-Maker---Profile)
+* [Bot Maker Profile](#bot-maker---profile)
 
 ## Signal Source
-* [Create source](#Source---Create)
-* [Get all](#Source---Get-all)
+* [Create source](#source---create)
+* [Get all](#source---get-all)
 
 ## Signal
-* [New signal](#Signal---New signal)
+* [New signal](#signal---new-signal)
 
 
 # Bot Maker - Profile
