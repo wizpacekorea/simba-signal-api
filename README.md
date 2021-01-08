@@ -318,4 +318,5 @@ Execute a match order | ``POST`` | ``/match``
 * 4001 = Unauthorized (check your access token)
 * 4002 = Invalid request (make sure you provide all the required parameters)
 * 4004 = Signal duplicate (when you send the signal with same id twice)
+* 4005 = Wrong request
 
