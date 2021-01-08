@@ -64,7 +64,7 @@ Create new signal source | ``POST`` | ``/signal_source/create``
           "en":"long description in english",
           "ko":"한국어로"
         },
-        "symbol":["BTCUSDT"]
+        "symbols":["BTCUSDT"]
   }
 ```
 
@@ -76,7 +76,7 @@ Create new signal source | ``POST`` | ``/signal_source/create``
       "identifier":"PKG000000000001",
       "name":"Bitmex 10X Algorithm",
       "exchange":"bitmex",
-      "symbol":["BTCUSDT"],
+      "symbols":["BTCUSDT"],
       "logo":"https://image.com/sample.jpg",
       "short_description":{
           "en":"description in english",
@@ -106,6 +106,7 @@ Get all my signal sources | ``GET`` | ``/signal_source/all``
             "identifier": "PKG000000000001",
             "name": "Bitmex 10X Algorithm",
             "exchange": "bitmex",
+            "symbols":["BTCUSDT"],
             "status": "active",
            "short_description":{
                 "en":"description in english",
