@@ -17,11 +17,11 @@ Access-Token | ``Signal maker's access token``
 * [Bot Maker Profile](#Bot-Maker---Profile)
 
 ## Signal Source
-* [Create source](https://google.com)
-* [Get all](https://google.com)
+* [Create source](#Source---Create)
+* [Get all](#Source---Get-all)
 
 ## Signal
-* [Send new signal](https://google.com)
+* [New signal](#Signal---New signal)
 
 
 # Bot Maker - Profile
@@ -122,7 +122,7 @@ Get all my signal sources | ``GET`` | ``/signal_source/all``
 ```
 
 
-# Signal - Send new signal
+# Signal - New signal
 
 ## Request
 Description | Method | Path
