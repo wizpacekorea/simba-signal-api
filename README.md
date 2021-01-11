@@ -297,8 +297,8 @@ Execute a match order | ``POST`` | ``/match``
 * For bots that only issue buy or sell signal. Send only:
 ```
   {
-    "id": "76cfa72f-275b-4537-970a-c495b20a49c6",
-    "symbol": "XBTUSD",
+    "unique_id": "76cfa72f-275b-4537-970a-c495b20a49c6",
+    "source_identifier":"PKG000000001",
     "price": "12000",
     "side": "sell",
     "type": "limit",
