@@ -203,12 +203,12 @@ Execute new signal | ``POST`` | ``/signal/make``
 * Required all the time
 * buy
 * sell
+* close
 
 ### type
 * Required all the time
 * limit
 * market
-* close
 
 ### timestamp
 * Required all the time
