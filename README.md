@@ -49,12 +49,20 @@ Description | Method | Path
 ---- | ---- | ----
 Create new signal source | ``POST`` | ``/signal_source/create``
 
+```
+For Spot symbols use format BTC/KRW, BTC/USDT.....
+
+For futures, exchange_fill if True we'll automatically match the symbols and add if they exist in all our supported exchanges. E.g if you send BTCUSDT Binance, we'll match with BTC-PERP on FTX and XBTUSD on Bitmex and support all exchanges automatically.
+```
+
 ### Body
 ```json
   {
         "identifier":"PKG000000000001",
-        "name":"Bitmex 10X Algorithm",
-        "exchange":"bitmex",
+        "name":"Binance 10X Algorithm",
+        "exchange":"binance",
+        "exchanges":["binance","ftx"],
+        "exchange_fill":true,
         "logo":"https://image.com/sample.jpg",
         "short_description":{
           "en":"description in english",
