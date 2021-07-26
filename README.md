@@ -331,3 +331,25 @@ Execute a match order | ``POST`` | ``/match``
 * 4004 = Signal duplicate (when you send the signal with same id twice)
 * 4005 = Wrong request
 
+
+## Sides
+* buy
+    - If position is open and it's long we do nothing.
+    - If position is open short, we close and open a long position.
+    - If no position, we open a long position.
+
+* sell
+    - If position is open and it's short we do nothing.
+    - If position is open long, we close and open a short position.
+    - If no position, we open a short position.
+
+* close
+    - We close any open position of the same symbol.
+
+* switchSellToBuy
+    - If position is open short, we close and open a long position.
+    - If no position, we open a long position.
+
+* switchBuyToSell
+    - If long position if open, we close and open short position.
+    - If no position, we open new short position.
