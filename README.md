@@ -212,6 +212,8 @@ Execute new signal | ``POST`` | ``/signal/make``
 * buy
 * sell
 * close
+* switchSellToBuy
+* switchBuyToSell
 
 ### type
 * Required all the time
